@@ -16,7 +16,7 @@ const Index = (props) => (
 
 Index.getInitialProps = async function() {
 
-	const response = await axios.get('https://jsonplaceholder.typicode.com/posts',
+	const response = await axios.get('https://jsonplaceholder.typicode.com/posts?_start=0&_limit=10',
 	)
 	return {
 		featured: response.data

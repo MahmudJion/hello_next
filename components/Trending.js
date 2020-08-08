@@ -4,7 +4,7 @@ class Trending extends React.Component {
 	  }
 
 	componentDidMount() {
-		axios.get('https://jsonplaceholder.typicode.com/posts',
+		axios.get('https://jsonplaceholder.typicode.com/posts?_start=10&_limit=10',
 		)
 		  .then(res => {
 			const trending = res.data;
