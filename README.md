@@ -1,5 +1,4 @@
 [![Next.js](https://assets.vercel.com/image/upload/v1538361091/repositories/next-js/next-js.png)](https://nextjs.org)
-
 <p align="center">
   <a aria-label="Vercel logo" href="https://vercel.com">
     <img src="https://img.shields.io/badge/MADE%20BY%20Vercel-000000.svg?style=for-the-badge&logo=Vercel&labelColor=000">
