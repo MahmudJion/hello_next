@@ -1,3 +1,5 @@
+import React from 'react';
+
 class Trending extends React.Component {
 	state = {
 		trending: []
