@@ -1,19 +1,29 @@
+// Updated Navbar component
+
 import Link from 'next/link';
 
 const Navbar = () => (
   <nav className="navbar navbar-expand navbar-dark bg-dark mb-4">
     <div className="container">
-      <a className="navbar-brand" href="#">News</a>
+      <Link href="/">
+        <a className="navbar-brand">News</a>
+      </Link>
       <div className="collapse navbar-collapse">
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
-            <Link href="/"><a className="nav-link">Home</a></Link>
+            <Link href="/">
+              <a className="nav-link">Home</a>
+            </Link>
           </li>
           <li className="nav-item">
-            <Link href="/about"><a className="nav-link">About</a></Link>
+            <Link href="/about">
+              <a className="nav-link">About</a>
+            </Link>
           </li>
           <li className="nav-item">
-            <Link href="/test"><a className="nav-link">Test</a></Link>
+            <Link href="/test">
+              <a className="nav-link">Test</a>
+            </Link>
           </li>
         </ul>
       </div>
