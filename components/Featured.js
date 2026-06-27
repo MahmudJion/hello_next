@@ -1,19 +1,23 @@
 import React from 'react';
 
-const Featured = ({ featured }) => (
+const Featured = ({ featured = [] }) => (
   <div>
-    <table className="table table-hover">
-      {featured.map(({ title, body }, index) => (
-        <tbody key={index}>
-          <tr>
-            <td>
-              <h4>{title}</h4>
-              <p>{body}</p>
-            </td>
-          </tr>
+    {featured.length === 0 ? (
+      <p className="text-muted">No featured posts available right now.</p>
+    ) : (
+      <table className="table table-hover">
+        <tbody>
+          {featured.map(({ title, body }, index) => (
+            <tr key={`${title}-${index}`}>
+              <td>
+                <h4>{title}</h4>
+                <p>{body}</p>
+              </td>
+            </tr>
+          ))}
         </tbody>
-      ))}
-    </table>
+      </table>
+    )}
   </div>
 );
 
