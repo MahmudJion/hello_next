@@ -1,61 +1,67 @@
-[![Next.js](https://assets.vercel.com/image/upload/v1538361091/repositories/next-js/next-js.png)](https://nextjs.org)
-<p align="center">
-  <a aria-label="Vercel logo" href="https://vercel.com">
-    <img src="https://img.shields.io/badge/MADE%20BY%20Vercel-000000.svg?style=for-the-badge&logo=Vercel&labelColor=000">
-  </a>
-  <a aria-label="NPM version" href="https://www.npmjs.com/package/next">
-    <img alt="" src="https://img.shields.io/npm/v/next.svg?style=for-the-badge&labelColor=000000">
-  </a>
-  <a aria-label="License" href="https://github.com/vercel/next.js/blob/canary/license.md">
-    <img alt="" src="https://img.shields.io/npm/l/next.svg?style=for-the-badge&labelColor=000000">
-  </a>
-  <a aria-label="Join the community on GitHub" href="https://github.com/vercel/next.js/discussions">
-    <img alt="" src="https://img.shields.io/badge/Join%20the%20community-blueviolet.svg?style=for-the-badge&logo=Next.js&labelColor=000000&logoWidth=20">
-  </a>
-</p>
-
 # hello_next
-A nextjs application with the example of data fetching from axios, components are using in pages and async function calling.
 
-## Getting Started
+A production-ready Next.js sample application showcasing static rendering with `getStaticProps`, client-side data fetching, and reusable UI components.
 
-Visit <a aria-label="next.js learn" href="https://nextjs.org/learn">https://nextjs.org/learn</a> to get started with Next.js.
+## Production readiness
 
-## Documentation
+- ✅ Static homepage with incremental static regeneration (`revalidate: 60`)
+- ✅ Client-side trending feed with Axios
+- ✅ Custom server entrypoint (`server.js`) supporting `HOSTNAME` and `PORT`
+- ✅ Next.js production config with `reactStrictMode`, disabled `poweredByHeader`, and compression
+- ✅ Targeted runtime requirement: Node.js 18.18.0+
 
-Visit [https://nextjs.org/docs](https://nextjs.org/docs) to view the full documentation.
+## Requirements
 
-## Who is using Next.js?
+- Node.js 18.18.0 or later
+- npm 10 or later
 
-Next.js is used by the world's leading companies. Check out the [Next.js Showcase](https://nextjs.org/showcase) to learn more.
-
-### Version
-1.1.0
-
-### Installation
-
-Install the dependencies
+## Install
 
 ```sh
-$ npm install
+npm install
 ```
 
-### Development
-To run in the development mood
+## Development
+
+Start the local development server:
 
 ```sh
-$ npm run dev
+npm run dev
 ```
 
-### Build
-Compile and build
+Open `http://localhost:3000`.
 
-```sh
-$ npm run build
-```
-### Serve
-To serve in the browser
+## Build for production
 
 ```sh
-$ npm start
+npm run build
 ```
+
+## Run in production
+
+```sh
+npm start
+```
+
+## Deployment notes
+
+- `server.js` is a minimal custom server and can be removed if deploying to Vercel.
+- Use environment variables `HOSTNAME` and `PORT` to configure runtime.
+- For production readiness, always run with `NODE_ENV=production`.
+- Add TLS termination and observability for hardened deployment.
+- Run `npm audit` regularly and fix any found vulnerabilities before deploying.
+
+## Project structure
+
+- `pages/index.js` — home page with featured news feed and ISR
+- `pages/about.js` — static about page
+- `pages/test.js` — placeholder page
+- `components/Layout.js` — shared layout and head metadata
+- `components/Featured.js` — featured posts listing
+- `components/Trending.js` — client-side trending posts
+- `server.js` — custom Node server entrypoint
+- `next.config.js` — production-oriented Next.js config
+
+## License
+
+ISC
