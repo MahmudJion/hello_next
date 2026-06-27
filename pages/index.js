@@ -14,21 +14,26 @@ const Index = ({ featured }) => (
   </Layout>
 );
 
-// Using async/await with try-catch for better error handling
-Index.getInitialProps = async function () {
+export async function getStaticProps() {
   try {
     const response = await axios.get('https://jsonplaceholder.typicode.com/posts?_start=0&_limit=10');
 
-    // Returning the data as an object to be consistent
     return {
-      featured: response.data,
+      props: {
+        featured: Array.isArray(response.data) ? response.data : [],
+      },
+      revalidate: 60,
     };
   } catch (error) {
-    console.error('Error fetching data:', error.message);
+    console.error('Error fetching featured posts:', error.message);
 
-    // Returning an empty object in case of an error to prevent potential issues
-    return {};
+    return {
+      props: {
+        featured: [],
+      },
+      revalidate: 60,
+    };
   }
-};
+}
 
 export default Index;
